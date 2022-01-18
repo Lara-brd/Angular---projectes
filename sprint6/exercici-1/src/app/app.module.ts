@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { EscenaComponent } from './components/escena/escena.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EscenaComponent
+    EscenaComponent,
   ],
   imports: [
     BrowserModule
