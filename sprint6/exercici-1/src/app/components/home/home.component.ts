@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   public name:string;
   public frases: Frase [];
+  public startHistory: Boolean;
 
   constructor() {
     this.name = "lara";
@@ -22,9 +23,15 @@ export class HomeComponent implements OnInit {
       new Frase ( "L'heroi va decidir travessar la porta que el portava a casa", ""),
       new Frase ( "Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ...", ""),
     ]
+    this.startHistory = false;
   }
 
   ngOnInit(): void {
+  }
+
+  start(){
+    this.startHistory = true;;
+    console.log(this.startHistory)
   }
 
 }

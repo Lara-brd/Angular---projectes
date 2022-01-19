@@ -1,4 +1,36 @@
 
-<app-escena [parentData] = "name" [fraseEscena] = "frases"></app-escena>
+<main>
+
+  
+  <div class="intro" *ngIf="!startHistory ; else startNow">
+  
+    <h1>L'heroi espacial</h1>
+    <p class="welcome">En aquesta aplicació podràs endinsar-te en la història del nostre superheroi i sempre tindras assenyalat per on vas perque no et perdis, utilitza els botons per avançar o retrocedir en la história quan ho necessitis. 
+    </p>
+  
+    <button class="btn" (click) = "start()">Comença l'aventura</button>
+  
+  </div>
+  
+  <ng-template #startNow>
+    <app-escena [parentData] = "name" [fraseEscena] = "frases"></app-escena>
+  </ng-template>
+
+  
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
