@@ -1,14 +1,19 @@
 
-<div class="btns">
-  <button (click) = "prev()">Anterior</button>
-  <button (click) = "next()">Següent</button>
-</div> 
+<main style="background-image: url({{fraseEscena[currentSentence].image}});">
 
+  
+  <div class="btns">
+    <button (click) = "prev()">Anterior</button>
+    <button (click) = "next()">Següent</button>
+  </div> 
+  
+  <article >
+    <p *ngFor = "let frase of fraseEscena; let i = index" [ngClass] = "{'pink': i == currentSentence, 'white': i != currentSentence}">{{i}} {{frase.sentence}}</p>
+  
+  </article>
 
-<article >
-  <p *ngFor = "let frase of fraseEscena; let i = index" [ngClass] = "{'pink': i == currentSentence}">{{i}} {{frase.sentence}}</p>
+</main>
 
-</article>
 
 
 
