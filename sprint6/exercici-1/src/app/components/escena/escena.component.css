@@ -1,8 +1,27 @@
 
-p {
+p{
   text-align: center;
   border: solid 2px rgba(0, 0, 0, 0.596);
   border-radius: 50px;
   padding: 10px;
   margin: 15px 10px;
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  margin:10px;
+}
+
+button {
+  width: 50%;
+  padding:15px;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.white{
+  background-color: white;
 }

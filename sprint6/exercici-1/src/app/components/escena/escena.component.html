@@ -1,5 +1,17 @@
 
+<div class="btns">
+  <button (click) = "prev()">Anterior</button>
+  <button (click) = "next()">Següent</button>
+</div> 
 
 
-<p *ngFor = "let parentText of parentTexts">{{parentText}}</p>
+<article >
+  <p *ngFor = "let frase of fraseEscena; let i = index" [ngClass] = "{'pink': i == currentSentence}">{{i}} {{frase.sentence}}</p>
+
+</article>
+
+
+
+
+
 
