@@ -8,7 +8,7 @@
   </div> 
   
   <article >
-    <p *ngFor = "let frase of fraseEscena; let i = index" [ngClass] = "{'pink': i == currentSentence, 'white': i != currentSentence}">{{i}} {{frase.sentence}}</p>
+    <p *ngFor = "let frase of fraseEscena; let i = index" [ngClass] = "{'pink': i == currentSentence, 'white': i != currentSentence}">{{frase.sentence}}</p>
   
   </article>
 
