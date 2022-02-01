@@ -9,6 +9,8 @@
           <input class="form-check-input me-2" type="checkbox" name="pressupost" [(ngModel)] = "activo1" (change) = "price()">
           <label class="form-check-label" for="pressupost"> Una pàgina web (500€) </label>
         </div>
+        
+        <app-panell></app-panell>  
     
         <div class="form-input">
           <input class="form-check-input me-2" type="checkbox" name="pressupost" [(ngModel)] ="activo2"(change) = "price()">
@@ -25,6 +27,7 @@
   <div>
     {{finalPrice}}
   </div>
+ 
 
   </div>
 
