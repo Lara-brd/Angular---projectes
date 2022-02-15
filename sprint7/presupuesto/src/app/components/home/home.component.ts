@@ -69,7 +69,6 @@ export class HomeComponent implements OnInit {
     this.refresh();
 
 
-
   }
 
   //refrescando precio
@@ -78,10 +77,12 @@ export class HomeComponent implements OnInit {
       this.prices[3]= this.subt;
       this.sumPrices = this._priceService.sum(this.prices);
     }else{
+      this.page =0;
+      this.language=0;
       this.subt =0;
+      this.prices[3]=0;
       this.sumPrices = this._priceService.sum(this.prices);
     }
 
   }
-
 }
