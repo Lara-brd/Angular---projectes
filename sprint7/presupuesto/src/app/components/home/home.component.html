@@ -1,44 +1,35 @@
 
-<div class="container p-3">
-
-  <h4>Que vols fer??</h4>
-
-  <form>
-
-    <!-- Bucle que itera x los productos y recibe la informacion del checkbox, problemas con el panel secundario
-    <div class="form-input" *ngFor="let product of products">
-      <input type="checkbox" id="web" class="form-check-input me-2" name="pressupost" [(ngModel)] = "product.checked" (change) ="getTotal()">
-      <label for="web">{{product.name}}</label>
-    </div> -->
-
-    <div class="form-input">
-      <input type="checkbox" id="web" class="form-check-input me-2" name="pressupost" [(ngModel)] ="products[0].checked" (change) ="getTotal()">
-      <label for="web">{{products[0].name}}</label>
-      <div >
-
-        <!-- componente hijo -->
-        <div *ngIf="products[0].checked">
-          <app-panell (paginaEv)="getPagina($event)" (idiomaEv) ="getIdioma($event)"></app-panell>
-        </div>
 
 
-      </div>
-    </div>
-    <div class="form-input">
-      <input type="checkbox" id="seo" class="form-check-input me-2" name="pressupost" [(ngModel)] ="products[1].checked" (change) ="getTotal()">
-      <label for="seo">{{products[1].name}}</label>
-    </div>
-    <div class="form-input">
-      <input type="checkbox" id="google" class="form-check-input me-2" name="pressupost" [(ngModel)] ="products[2].checked" (change) ="getTotal()">
-      <label for="google">{{products[2].name}}</label>
+<div class="row">
+
+  <div class="col-6 offset-3 p-2 mt-4">
+    <h3 class=" my-4">Que vols fer??</h3>
+
+    
+    <input [(ngModel)] = "products[0].select" class="form-check-input me-2" type="checkbox" id="web" (change)="priceProducts()">
+    <label class="form-check-label" for="web">{{products[0].name}}</label>
+    <p>{{products[0].select}}</p>
+
+
+    <div *ngIf="products[0].select" >
+      <app-panell (pagLang)="getDataPanell($event)"></app-panell>
+
     </div>
 
-  </form>
 
-  <div>
-    <b>
-      {{finalPrice}}
-    </b>
+    <input [(ngModel)] = "products[1].select" class="form-check-input me-2" type="checkbox" id="seo" (change)="priceProducts()">
+    <label class="form-check-label" for="seo">{{products[1].name}}</label>
+    <p>{{products[1].select}}</p>
+
+    <input [(ngModel)] = "products[2].select" class="form-check-input me-2" type="checkbox" id="google" (change)="priceProducts()">
+    <label class="form-check-label" for="google">{{products[2].name}}</label>
+    <p>{{products[2].select}}</p>
+
+    <div>
+      <p class="total">{{sumPrices}}</p>
+    </div>
+
   </div>
 
 </div>

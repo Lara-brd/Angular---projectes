@@ -1,9 +1,10 @@
-export class Product {
-
-  constructor(
-    public name: string,
-    public price:number,
-    public checked:boolean
-  ){}
-
+export class Product{
+  name:string;
+  price:number;
+  select:boolean;
+  constructor(name:string, price:number, select:boolean){
+    this.name = name;
+    this.price = price;
+    this.select = select;
+  }
 }

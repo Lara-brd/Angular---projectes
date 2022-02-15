@@ -1,24 +1,11 @@
+<form class="p-4 border mb-4" [formGroup] = "formWeb">
 
-
-<form class="m-4 p-4 border border-dark rounded-3" [formGroup] = "priceForm">
-
-  <div class="form-group row">
-    <label for="pagina" class="col-lg-3 col-form-label">Nombre de pàgines</label>
-    <div class="col-lg-9">
-      <input type="number" class="form-control form-control-sm" id="pagina" formControlName = "pagina" [class.is-invalid] = "noValidoPag()" (change) = "sendPag(getPagina())">
-    </div>
+  <div>
+    <label for="page">Nombre Pàgines</label>
+    <input [class.is-invalid]="noValid(formWeb.get('page'))" type="number" class="form-control" formControlName="page" (change)="sendDataPanell()"> 
   </div>
-
-  <div class="form-group row">
-    <label for="idioma" class="col-lg-3 col-form-label">Nombre d'idiomes</label>
-    <div class="col-lg-9">
-      <input type="number" class="form-control form-control-sm" id="idioma" formControlName = "idioma" [class.is-invalid] = "noValidoIdioma()" (change) = "sendIdioma(getIdioma())">
-    </div>
+  <div>
+    <label for="page">Nombre Pàgines</label>
+    <input [class.is-invalid]="noValid(formWeb.get('language'))" type="number" class="form-control" formControlName="language" (change)="sendDataPanell()"> 
   </div>
-
 </form>
-
-<div>
-  <p>Pagina</p>
-</div>
-
