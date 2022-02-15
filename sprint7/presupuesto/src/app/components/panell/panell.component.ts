@@ -32,9 +32,6 @@ export class PanellComponent implements OnInit {
     this.pagLang.emit(PARAMETROS);
   }
 
-  
-
-
 
 }
 

@@ -64,8 +64,10 @@ export class HomeComponent implements OnInit {
     this.page = parameters.page;
     this.language = parameters.language;
     
-    this.subt = this._priceService.getSubtotal(this.page, this.language)
+    this.subt = this._priceService.getSubtotal(this.page) + this._priceService.getSubtotal(this.language);
+    console.log(this.subt);
     this.refresh();
+
 
 
   }
@@ -73,15 +75,13 @@ export class HomeComponent implements OnInit {
   //refrescando precio
   refresh(){
     if(this.products[0].select){
-      this.sumPrices = this.sumPrices + this.subt;
-      this.totalProducts.push(this.sumPrices);
-      
+      this.prices[3]= this.subt;
+      this.sumPrices = this._priceService.sum(this.prices);
     }else{
-      this.sumPrices = this.sumPrices;
       this.subt =0;
-      this.totalProducts.push(this.sumPrices);
+      this.sumPrices = this._priceService.sum(this.prices);
     }
-    console.log(this.totalProducts)
+
   }
 
 }

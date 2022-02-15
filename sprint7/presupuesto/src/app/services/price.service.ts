@@ -15,8 +15,8 @@ export class PriceService {
     return result;
   }
 
-  getSubtotal(pag:number, lang:number){
-    return pag * lang * 30;
+  getSubtotal(item:number){
+    return item * 30;
   }
 
 }

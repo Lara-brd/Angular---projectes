@@ -1,4 +1,22 @@
 .total {
   font-size: 1.2em;
   font-weight: bold;
+  color:white;
+}
+
+.wrapp {
+  margin-top: 10vh;
+  max-width:800px;
+  width:90%;
+}
+
+.rowForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:50px 20px;
+}
+
+.borderMagenta{
+  border-color: #89253e;
 }

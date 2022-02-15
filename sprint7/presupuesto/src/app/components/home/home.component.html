@@ -1,22 +1,19 @@
 
+<div class="container bg-white shadow rounded wrapp">
 
+<div class="rowForm">
 
-<div class="row">
+  <div class="formWrapp">
 
-  <div class="col-6 offset-3 p-2 mt-4">
     <h3 class=" my-4">Que vols fer??</h3>
-
-    
     <input [(ngModel)] = "products[0].select" class="form-check-input me-2" type="checkbox" id="web" (change)="priceProducts()">
     <label class="form-check-label" for="web">{{products[0].name}}</label>
     <p>{{products[0].select}}</p>
 
-
+    <!-- Form paginas e idiomas -->
     <div *ngIf="products[0].select" >
       <app-panell (pagLang)="getDataPanell($event)"></app-panell>
-
     </div>
-
 
     <input [(ngModel)] = "products[1].select" class="form-check-input me-2" type="checkbox" id="seo" (change)="priceProducts()">
     <label class="form-check-label" for="seo">{{products[1].name}}</label>
@@ -27,16 +24,13 @@
     <p>{{products[2].select}}</p>
 
     <div>
-      <p class="total">{{sumPrices}}</p>
+      <p class="total badge bg-primary rounded">{{sumPrices}}</p>
     </div>
 
   </div>
 
 </div>
 
-
-
-
-
+</div>
 
 
