@@ -4,20 +4,19 @@
 
     <label for="page">Nombre Pàgines</label>
     <div class="d-flex mb-4" >
-
-      <button id="incPage" type="button" class="btn btn-dark shadow rounded" (click) = "inc($event, formWeb.get('page'))">+</button>
+      <button id="decPage" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('page'))">-</button>
       <input id="inputLang" [class.is-invalid]="noValid(formWeb.get('page'))" type="text" class="form-control mx-2" formControlName="page" (change)=" sendDataPanell()"> 
-      <button id="decPage" type="button" class="btn btn-dark shadow rounded" (click) = "dec($event, formWeb.get('page'))">-</button>
+      <button id="incPage" type="button" class="btn bg-green shadow rounded" (click) = "inc($event, formWeb.get('page'))">+</button>
     </div>
 
   </div>
   <label for="page">Nombre d'Idiomes</label>
 
   <div class="d-flex">
-    <button id="incLang" type="button" class="btn btn-dark shadow rounded" (click) = "inc($event, formWeb.get('language'))">+</button>
+    <button id="decLang" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('language'))">-</button>
     <input [class.is-invalid]="noValid(formWeb.get('language'))" type="text" class="form-control mx-2" formControlName="language" (change)="sendDataPanell()"> 
-    <button id="decLang" type="button" class="btn btn-dark shadow rounded" (click) = "dec($event, formWeb.get('language'))">-</button>
-
+    <button id="incLang" type="button" class="btn bg-green shadow rounded" (click) = "inc($event, formWeb.get('language'))">+</button>
+    
   </div>
 
 </form>
