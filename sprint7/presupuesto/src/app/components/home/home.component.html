@@ -29,8 +29,14 @@
       <div class = "row p-4">
         <p class="total badge rounded bg-mag">{{sumPrices}}</p>
       </div>
-
+      <div>
+        <p class="total badge bg-green rounded">{{sumPrices}}</p>
+      </div>
     </div>
+  </div>
+  
+  <div class="row d-flex justify-content-end p-3">
+    <button [routerLink]="['/welcome']" type="button" class="btn rounded shadow bg-yellow text-white">Tornar enrera</button>
   </div>
 </div>
 
