@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   //array precio productos
   prices:number[]=[];
   sumPrices:number = 0;
+  
+  //Array que recoge el precio final
   totalProducts:number[]=[]
   subt:number =0;
   
@@ -77,11 +79,15 @@ export class HomeComponent implements OnInit {
     if(this.products[0].select){
       this.prices[3]= this.subt;
       this.sumPrices = this._priceService.sum(this.prices);
+      this.totalProducts.push(this.sumPrices);
+      console.log(this.totalProducts);
     }else{
       //si opción web no está seleccionada reseteo el precio del subtotal
       this.subt =0;
       this.prices[3]= 0;
       this.sumPrices = this._priceService.sum(this.prices);
+      this.totalProducts.push(this.sumPrices);
+      console.log(this.totalProducts);
     }
   }
 }
