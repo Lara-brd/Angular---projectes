@@ -1,12 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-panell',
+  encapsulation:ViewEncapsulation.None,
   templateUrl: './panell.component.html',
   styleUrls: ['./panell.component.scss']
 })
 export class PanellComponent implements OnInit {
+  question = faQuestionCircle;
   @Output() pagLang = new EventEmitter<any>();
 
   parametros = {
@@ -14,7 +17,7 @@ export class PanellComponent implements OnInit {
     language:0
   }
 
-  constructor() {}
+  constructor(private modal:NgbModal) {}
   formWeb = new FormGroup ({
     page: new FormControl(0, Validators.required),
     language: new FormControl(0,Validators.required )
@@ -22,6 +25,11 @@ export class PanellComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  openLG(contenido:any){
+    this.modal.open(contenido,{size:'lg'});
+  }
+  
 
   //validando form
   noValid(element:any){
@@ -55,6 +63,7 @@ export class PanellComponent implements OnInit {
         this.sendDataPanell();
       }
     }
+
   }
 
 

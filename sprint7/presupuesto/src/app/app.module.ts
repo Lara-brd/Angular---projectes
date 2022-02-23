@@ -12,6 +12,8 @@ import { PriceService } from './services/price.service';
 import { PanellComponent } from './components/panell/panell.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,7 +29,9 @@ import { PruebaComponent } from './components/prueba/prueba.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [PriceService, appRoutingProviders],
   bootstrap: [AppComponent]

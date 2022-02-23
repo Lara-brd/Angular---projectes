@@ -5,8 +5,13 @@
     <label for="page">Nombre Pàgines</label>
     <div class="d-flex mb-4" >
       <button id="decPage" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('page'))">-</button>
-      <input id="inputLang" [class.is-invalid]="noValid(formWeb.get('page'))" type="text" class="form-control mx-2" formControlName="page" (change)=" sendDataPanell()"> 
+      <input id="inputLang" [class.is-invalid]="noValid(formWeb.get('page'))" type="text" class="form-control mx-2 text-center" formControlName="page" (change)=" sendDataPanell()"> 
       <button id="incPage" type="button" class="btn bg-green shadow rounded" (click) = "inc($event, formWeb.get('page'))">+</button>
+
+      <!-- question -->
+      <div class="question"><fa-icon class="iconQuestion" (mouseover)="openLG(contenido)" [icon]="question"></fa-icon></div>
+
+      <!-- (mouseout)="changeText=false" -->
     </div>
 
   </div>
@@ -20,3 +25,20 @@
   </div>
 
 </form>
+
+<h1>Modal</h1>
+<hr>
+<ng-template #contenido let-modal>
+<div class="modal-body">
+    En aquest component ha d'indicar el nombre de pàgines que tindrà l'aplicació web.
+</div>
+
+
+</ng-template>
+
+
+
+
+
+
+

@@ -1,3 +1,8 @@
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
 body{
   background: #70e1f5;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
@@ -12,3 +17,5 @@ body{
 .bg-yellow{
   background-color: #e3c28c;
 }
+
+

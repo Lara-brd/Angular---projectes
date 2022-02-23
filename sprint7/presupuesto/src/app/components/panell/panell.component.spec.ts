@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PanellComponent } from './panell.component';
+
+
 
 describe('PanellComponent', () => {
   let component: PanellComponent;
