@@ -36,46 +36,7 @@
   </div>
   
   <div class="row d-flex justify-content-end p-3">
-    <button [routerLink]="['/welcome']" type="button" class="btn rounded shadow bg-yellow text-white">Tornar enrera</button>
+    <button [routerLink]="['/welcome']" type="button" class="btn rounded shadow bg-yellow text-white"> <span class="pe-3"><fa-icon [icon]="back"></fa-icon></span>  Tornar</button>
   </div>
 </div>
-<fa-icon [icon]="faCoffee"></fa-icon>
-
-
-<!-- 
-<div class="container bg-white shadow rounded wrapp ">
-
-  <div class="rowForm">
-
-  <div class="formWrapp">
-
-    <h3 class=" my-4">Que vols fer??</h3>
-    <input [(ngModel)] = "products[0].select" class="form-check-input me-2" type="checkbox" id="web" (change)="priceProducts()">
-    <label class="form-check-label" for="web">{{products[0].name}}</label>
-     Form paginas e idiomas -->
-    <!-- <div>
-
-    <div *ngIf="products[0].select" > 
-      <app-panell (pagLang)="getDataPanell($event)"></app-panell>
-    </div>
-
-    <input [(ngModel)] = "products[1].select" class="form-check-input me-2" type="checkbox" id="seo" (change)="priceProducts()">
-    <label class="form-check-label" for="seo">{{products[1].name}}</label>
-    <p>{{products[1].select}}</p>
-
-    <input [(ngModel)] = "products[2].select" class="form-check-input me-2" type="checkbox" id="google" (change)="priceProducts()">
-    <label class="form-check-label" for="google">{{products[2].name}}</label>
-    <p>{{products[2].select}}</p>
-
-    <div>
-      <p class="total badge bg-primary rounded">{{sumPrices}}</p>
-    </div>
-
-    </div>
-
-  </div> -->
-
-
-<!-- </div> --> 
-
 

@@ -9,8 +9,9 @@
       <button id="incPage" type="button" class="btn bg-green shadow rounded" (click) = "inc($event, formWeb.get('page'))">+</button>
 
       <!-- question -->
-      <div class="question"><fa-icon class="iconQuestion" (mouseover)="openLG(contenido)" [icon]="question"></fa-icon></div>
+      <div class="question"><fa-icon class="iconQuestion" (click)="openLG(contenido)" [icon]="question"></fa-icon></div>
 
+      <!-- (mouseover)="openLG(contenido)" -->
       <!-- (mouseout)="changeText=false" -->
     </div>
 
@@ -19,23 +20,27 @@
 
   <div class="d-flex">
     <button id="decLang" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('language'))">-</button>
-    <input [class.is-invalid]="noValid(formWeb.get('language'))" type="text" class="form-control mx-2" formControlName="language" (change)="sendDataPanell()"> 
+    <input [class.is-invalid]="noValid(formWeb.get('language'))" type="text" class="form-control mx-2 text-center" formControlName="language" (change)="sendDataPanell()"> 
     <button id="incLang" type="button" class="btn bg-green shadow rounded" (click) = "inc($event, formWeb.get('language'))">+</button>
+          <!-- question -->
+    <div class="question"><fa-icon class="iconQuestion" (click)="openLG(contenido2)" [icon]="question"></fa-icon></div>
     
   </div>
 
 </form>
 
-<h1>Modal</h1>
-<hr>
+
+<!-- templates -->
 <ng-template #contenido let-modal>
-<div class="modal-body">
+<div class="modal-body text-center">
     En aquest component ha d'indicar el nombre de pàgines que tindrà l'aplicació web.
 </div>
-
-
 </ng-template>
-
+<ng-template #contenido2 let-modal>
+<div class="modal-body text-center">
+    En aquest component ha d'indicar el nombre d'idiomes que tindrà l'aplicació web.
+</div>
+</ng-template>
 
 
 
