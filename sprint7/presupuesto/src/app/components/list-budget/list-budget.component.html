@@ -1,0 +1,19 @@
+<h3>Budget List</h3>
+
+<div class="budget rounded p-3" *ngFor = "let budget of budgets">
+  <div class="client">
+    <p>{{budget.budgetName}} by {{budget.clientName}}   <span class="amount px-3">{{budget.total}} $</span></p>
+  </div>
+  <ul>
+    <li class="product" *ngFor = "let product of budget.products">
+      <p>{{product.slice(0,-6)}}</p>
+      <p class="subList" *ngIf = "product == 'A Web page (500$)'">
+        Pages: {{budget.page}} / Languages: {{budget.language}}
+      </p>
+      
+    </li>
+
+  </ul>
+
+
+</div>

@@ -4,18 +4,33 @@
 
 
 body{
-  background: #70e1f5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #43C6AC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  color: #18174e;
+  font-size:2rem;
+}
+
+.txt{
+  font-family: 'Nunito', sans-serif;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: #55585c;
+}
+
+btn-blue {
+  background-color:#18174e;
 }
 
 .bg-green{
-  background-color: #01a3a4;
+  background-color: #3dafa0;
 }
 
-.bg-yellow{
-  background-color: #e3c28c;
-}
+
 
 

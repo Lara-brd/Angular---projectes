@@ -9,6 +9,11 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  //info para mandar a servicio
+  budgetName:string = "";
+  clientName:string = "";
+  
   back = faChevronLeft;
 
   //array precio productos
@@ -24,21 +29,20 @@ export class HomeComponent implements OnInit {
   language:number =0;
 
 
-
   //products info
   products:Product[] = [
     {
-      name: 'Una pàgina Web (500€)',
+      name: 'A Web page (500$)',
       price: 500,
       select:false 
     },
     {
-      name: 'Una consultoria SEO (300€)',
+      name: 'SEO service (300$)',
       price: 300,
       select:false 
     },
     {
-      name: 'Una campanya de Google Ads (200€)',
+      name: 'Google Ads campaign(200$)',
       price: 200,
       select:false 
     },
@@ -93,4 +97,31 @@ export class HomeComponent implements OnInit {
       console.log(this.totalProducts);
     }
   }
+
+  setInfo(){
+    let products = [];
+    for(let i=0; i<3; i++){
+      if(this.products[i].select){
+        products.push(this.products[i].name);
+      }
+    }
+
+    this._priceService.setBudget(this.budgetName, this.clientName, products, this.page, this.language , this.sumPrices);
+
+    this.resetForm();
+  }
+
+  resetForm(){
+    this.budgetName = "";
+    this.clientName = "";
+    this.page =0;
+    this.language =0;
+    this.sumPrices =0;
+    for(let i =0; i< 3; i++){
+      this.products[i].select = false;
+    }
+  }
+
+
+
 }

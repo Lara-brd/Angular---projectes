@@ -1,42 +1,93 @@
 
 
-<div class="container bg-white shadow rounded wrapp ">
-  <div class="rowForm">
-    <div class="formWrapp">
+<!-- First Containter TITLE -->
+<div class="container wrapp bg-white mt-5 p-4 rounded-top shadow">
+  <h2 class="title text-center mt-3">What do you want?</h2>
+</div>
 
-      <h2 class=" my-4 title">Que vols fer??</h2>
+<!-- Second Container CONTENT -->
+<div class="container wrapp txt shadow">
+  <div class="row">
 
-      <div class="row p-3">
+    <!-- input budget and client -->
+    <div class="col-md-6 px-4 pt-4 p-md-5 bg-white">
+        <label for="budget" class="form-label">Budget Name:</label>
+        <input class="form-control form-control-sm" type="text" id="budget" [(ngModel)]="budgetName">
+    </div>
+
+    <div class="col px-4 pb-4 p-md-5 bg-white">
+        <label class="form-label" for="client">Client Name:</label>
+        <input class="form-control form-control-sm" type="text" id="client"  [(ngModel)]="clientName">
+    </div>
+  </div>
+
+  <!-- total -->
+  <div class="d-flex flex-row justify-content-center align-items-center pt-2 m-0 total text-white">
+    <p>Price</p>
+    <p class="number m-0">{{sumPrices}}</p>
+  </div>
+
+
+
+</div><!--end container forms -->
+
+<div class="container bg-white wrapp p-4 txt rounded-bottom shadow">
+  <div class="row">
+    <!-- checkbox form -->
+    <div class="col-md-6">
+      <div class="m-4">
         <input [(ngModel)] = "products[0].select" class="form-check-input me-2" type="checkbox" id="web" (change)="priceProducts()">
         <label class="form-check-label" for="web">{{products[0].name}}</label>
       </div>
-      
-      <!-- Form-panell -->
-      <div *ngIf="products[0].select" > 
+    
+        <!-- Form-panell -->
+        <div *ngIf="products[0].select" > 
         <app-panell (pagLang)="getDataPanell($event)"></app-panell>
-      </div>
-
-      <div class = "row p-3">
+        </div>
+    
+      <div class = "m-4">
         <input [(ngModel)] = "products[1].select" class="form-check-input me-2" type="checkbox" id="seo" (change)="priceProducts()">
         <label class="form-check-label" for="seo">{{products[1].name}}</label>
       </div>
-
-      <div class = "row p-3">
+    
+      <div class = "m-4">
         <input [(ngModel)] = "products[2].select" class="form-check-input me-2" type="checkbox" id="google" (change)="priceProducts()">
         <label class="form-check-label" for="google">{{products[2].name}}</label>
       </div>
-      
-      <div class = "row p-4">
-        <p class="total badge rounded bg-mag">{{sumPrices}}</p>
-      </div>
-      <div>
-        <p class="total badge bg-green rounded">{{sumPrices}}</p>
-      </div>
+      <!-- btn send form -->
+      <button class="btn w-50 py-2 btn-blue" type="button" (click)="setInfo()">SEND BUDGET</button>
     </div>
-  </div>
+    <div class="col">
+      <app-list-budget></app-list-budget>
+    </div>
+
   
-  <div class="row d-flex justify-content-end p-3">
-    <button [routerLink]="['/welcome']" type="button" class="btn rounded shadow bg-yellow text-white"> <span class="pe-3"><fa-icon [icon]="back"></fa-icon></span>  Tornar</button>
   </div>
+
+
+</div><!--end container checkbox -->
+
+<div class="back ">
+  <div [routerLink]="['/welcome']" type="button" class="btn shadow btn-back p-3"> <span class="pe-2"><fa-icon [icon]="back"></fa-icon></span> BACK</div>
 </div>
+
+
+<!-- 
+        <app-list-budget></app-list-budget>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

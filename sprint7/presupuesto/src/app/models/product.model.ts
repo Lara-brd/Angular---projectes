@@ -1,4 +1,7 @@
 export class Product{
+  static contains(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   name:string;
   price:number;
   select:boolean;

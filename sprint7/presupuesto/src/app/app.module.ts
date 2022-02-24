@@ -14,6 +14,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListBudgetComponent } from './components/list-budget/list-budget.component';
 
 
 
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     PanellComponent,
     WelcomeComponent,
-    PruebaComponent
+    PruebaComponent,
+    ListBudgetComponent
   ],
   imports: [
     BrowserModule,
