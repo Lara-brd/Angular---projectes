@@ -22,12 +22,9 @@ export class HomeComponent implements OnInit {
 
   //Array que recoge el precio final de los productos
   totalProducts:number[]=[]
-
   subt:number =0;
-  
   page:number = 0;
   language:number =0;
-
 
   //products info
   products:Product[] = [
@@ -87,17 +84,17 @@ export class HomeComponent implements OnInit {
       this.prices[3]= this.subt;
       this.sumPrices = this._priceService.sum(this.prices);
       this.totalProducts.push(this.sumPrices);
-      console.log(this.totalProducts);
     }else{
       //si opción web no está seleccionada reseteo el precio del subtotal
       this.subt =0;
       this.prices[3]= 0;
       this.sumPrices = this._priceService.sum(this.prices);
       this.totalProducts.push(this.sumPrices);
-      console.log(this.totalProducts);
     }
   }
 
+
+  //Recogiendo valores para arrays products
   setInfo(){
     let products = [];
     for(let i=0; i<3; i++){
@@ -105,7 +102,7 @@ export class HomeComponent implements OnInit {
         products.push(this.products[i].name);
       }
     }
-
+    //Recogiendo valores para array budgets
     this._priceService.setBudget(this.budgetName, this.clientName, products, this.page, this.language , this.sumPrices);
 
     this.resetForm();
@@ -121,7 +118,6 @@ export class HomeComponent implements OnInit {
       this.products[i].select = false;
     }
   }
-
 
 
 }

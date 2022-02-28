@@ -1,19 +1,32 @@
-<h3>Budget List</h3>
+<h3 class="text-center">Budget List</h3>
 
-<div class="budget rounded p-3" *ngFor = "let budget of budgets">
-  <div class="client">
-    <p>{{budget.budgetName}} by {{budget.clientName}}   <span class="amount px-3">{{budget.total}} $</span></p>
+<!-- botones para ordenar  -->
+<div class="btn d-flex justify-content-center btn-group btn-group-toggle">
+  <button type ="button" (click)="sortBudget()" class="btn bg-light border gray">A-Z</button> 
+  <button type ="button" (click)="sortTime()" class="btn bg-light border"><fa-icon class="gray" [icon] ="clock"></fa-icon></button> 
+  <button type ="button" (click)="resetArray()" class="btn bg-light border"><fa-icon class="gray" [icon]="hippo"></fa-icon></button> 
+</div>
+
+
+
+<div  *ngFor = "let budget of budgets">
+  <div class="budget rounded p-3"  *ngIf="budget.total != 0">
+    
+    <div class="client d-flex justify-content-between">
+      <p><strong>{{budget.budgetName}}</strong>  by {{budget.clientName}} </p><p><span class="amount px-3">{{budget.total}} $</span></p>
+    </div>
+    
+    <ul>
+      <li class="product" *ngFor = "let product of budget.products">
+        <p>{{product.slice(0,-6)}}</p>
+        <p class="subList" *ngIf = "product == 'A Web page (500$)'">
+        </p>
+      </li>
+    </ul>
+    <div class="text-end time">
+      <p class="m-0">{{budget.date}}</p>
+    </div>
+
   </div>
-  <ul>
-    <li class="product" *ngFor = "let product of budget.products">
-      <p>{{product.slice(0,-6)}}</p>
-      <p class="subList" *ngIf = "product == 'A Web page (500$)'">
-        Pages: {{budget.page}} / Languages: {{budget.language}}
-      </p>
-      
-    </li>
-
-  </ul>
-
 
 </div>

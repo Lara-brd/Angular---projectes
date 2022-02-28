@@ -32,9 +32,10 @@
 </div><!--end container forms -->
 
 <div class="container bg-white wrapp p-4 txt rounded-bottom shadow">
-  <div class="row">
+  <div class="row p-4">
     <!-- checkbox form -->
     <div class="col-md-6">
+      <h3 class="text-center">Services</h3>
       <div class="m-4">
         <input [(ngModel)] = "products[0].select" class="form-check-input me-2" type="checkbox" id="web" (change)="priceProducts()">
         <label class="form-check-label" for="web">{{products[0].name}}</label>
@@ -55,15 +56,14 @@
         <label class="form-check-label" for="google">{{products[2].name}}</label>
       </div>
       <!-- btn send form -->
-      <button class="btn w-50 py-2 btn-blue" type="button" (click)="setInfo()">SEND BUDGET</button>
+      <button class="btn w-50 py-2 btn-send text-white" type="button" (click)="setInfo()">SEND BUDGET</button>
     </div>
-    <div class="col">
+    <div class="col pt-4 pt-md-0">
       <app-list-budget></app-list-budget>
     </div>
 
   
   </div>
-
 
 </div><!--end container checkbox -->
 
@@ -72,9 +72,8 @@
 </div>
 
 
-<!-- 
-        <app-list-budget></app-list-budget>
- -->
+
+
 
 
 

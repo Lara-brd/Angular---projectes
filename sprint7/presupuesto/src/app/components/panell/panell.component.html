@@ -2,7 +2,7 @@
 
   <div>
 
-    <label for="page">Nombre Pàgines</label>
+    <label for="page">Pages number</label>
     <div class="d-flex mb-4" >
       <button id="decPage" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('page'))">-</button>
       <input id="inputLang" [class.is-invalid]="noValid(formWeb.get('page'))" type="text" class="form-control mx-2 text-center" formControlName="page" (change)=" sendDataPanell()"> 
@@ -16,7 +16,7 @@
     </div>
 
   </div>
-  <label for="page">Nombre d'Idiomes</label>
+  <label for="page">Language number</label>
 
   <div class="d-flex">
     <button id="decLang" type="button" class="btn bg-green shadow rounded" (click) = "dec($event, formWeb.get('language'))">-</button>

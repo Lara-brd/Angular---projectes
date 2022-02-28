@@ -6,16 +6,22 @@ import { Budget } from '../models/budget.model';
 })
 export class PriceService {
 
+
   budget:Budget = {
     budgetName:"",
     clientName: "",
     products:[],
     page:0,
     language:0,
-    total:0
+    total:0,
+    date:0
   }
 
   budgetsArr:Budget[]=[];
+  budgetsArr2:Budget[]=[];
+  
+  
+
 
   constructor() { }
 
@@ -32,14 +38,15 @@ export class PriceService {
   }
 
   setBudget(budgetName:string, clientName:string, products:any[], page:number, language:number, total:number){
+    
     this.budget.budgetName = budgetName;
     this.budget.clientName = clientName;
     this.budget.products = products;
     this.budget.page = page;
     this.budget.language = language;
     this.budget.total = total;
-    this.budgetsArr.push(this.budget);
-    console.log(this.budgetsArr);
+    this.budget.date = this.currentDate();
+    this.addingInfoToBudget()
     this.resetBudget();
   }
 
@@ -50,12 +57,41 @@ export class PriceService {
       products:[],
       page:0,
       language:0,
-      total:0
+      total:0,
+      date:0,
     }
   }
 
   getBudget(){
     return this.budgetsArr;
   }
+
+  getBudget2(){
+    return this.budgetsArr2;
+  }
+
+  currentDate(){
+    //recogiendo fecha
+    let d = new Date();
+    let hora = d.getHours();
+    let minutes = d.getMinutes();
+    let year = d.getFullYear();
+    let month = d.getMonth()+1;
+    let day = d.getDate();
+    let seconds = d.getSeconds();
+
+    return year + '-' + month + '-' + day+ '  ' + hora+ ':' + minutes +': '+ seconds;
+
+  }
+
+  //añadiendo info a budgetarr
+  addingInfoToBudget(){
+    if(this.budget.total != 0 && this.budget.budgetName != '' && this.budget.clientName != ''){
+      this.budgetsArr.push(this.budget);
+      this.budgetsArr2.push(this.budget);
+    }
+    console.log(this.budgetsArr);
+  }
+
   
 }
