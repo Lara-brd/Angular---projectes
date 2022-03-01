@@ -1,4 +1,17 @@
-<h3 class="text-center">Budget List</h3>
+<h3 class="text-center pt-5 pt-md-0">Budget List</h3>
+
+<!-- buscador -->
+<div class="form-group mx-sm-3 mb-2">
+
+  <div class="row search rounded">
+    <div class="col-1 py-4">
+      <label for="filterList"><fa-icon class="text-white" [icon] ="search"></fa-icon></label>
+    </div>
+    <div class="col">
+      <input type="text" id="filterList" class="form-control form-control-sm my-4" name="filterList" [(ngModel)] = "filterList" placeholder= "Search...">
+    </div>
+  </div>
+</div>
 
 <!-- botones para ordenar  -->
 <div class="btn d-flex justify-content-center btn-group btn-group-toggle">
@@ -9,7 +22,7 @@
 
 
 
-<div  *ngFor = "let budget of budgets">
+<div  *ngFor = "let budget of budgets | filter:filterList">
   <div class="budget rounded p-3"  *ngIf="budget.total != 0">
     
     <div class="client d-flex justify-content-between">
@@ -23,8 +36,8 @@
         </p>
       </li>
     </ul>
-    <div class="text-end time">
-      <p class="m-0">{{budget.date}}</p>
+    <div class="text-end">
+      <p class="m-0 date">{{budget.date}}</p>
     </div>
 
   </div>

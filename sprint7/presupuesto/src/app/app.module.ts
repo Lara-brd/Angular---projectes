@@ -15,6 +15,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListBudgetComponent } from './components/list-budget/list-budget.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -25,7 +26,8 @@ import { ListBudgetComponent } from './components/list-budget/list-budget.compon
     PanellComponent,
     WelcomeComponent,
     PruebaComponent,
-    ListBudgetComponent
+    ListBudgetComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

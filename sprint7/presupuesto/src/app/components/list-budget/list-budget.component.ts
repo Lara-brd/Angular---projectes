@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PriceService } from 'src/app/services/price.service';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-budget',
@@ -14,7 +15,9 @@ export class ListBudgetComponent implements OnInit {
 
   hippo = faSync;
   clock = faClock;
+  search = faSearch;
 
+  filterList = '';
   constructor(private _priceService: PriceService) { }
 
   ngOnInit(): void {
@@ -54,7 +57,6 @@ export class ListBudgetComponent implements OnInit {
       return <any>new Date (b.date) - <any> new Date(a.date)
     });
   }
-
 
 
 
