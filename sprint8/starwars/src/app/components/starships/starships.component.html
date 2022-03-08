@@ -1,0 +1,15 @@
+
+<div class="container-fluid">
+
+    <div class="container p-4">
+      <div class="list-group" [routerLink]="['/ship-file']">
+        <div class="list-group-item m-2 p-3 rounded bg-gray text-secondary" *ngFor="let ship of ships" [routerLink]="['/shipFile']" >
+          <p class="m-0 pb-1">{{ship.name}}</p>
+          <p class="m-0 text-sm">{{ship.model}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+

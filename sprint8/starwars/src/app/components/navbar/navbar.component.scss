@@ -1,0 +1,22 @@
+.dcha {
+  right:10px;
+}
+
+li{
+  padding:6px;
+  border-bottom:1px solid transparent;
+}
+
+li:hover{
+  border-bottom:1px solid rgb(17, 84, 230);
+}
+
+
+#menu {
+  li {
+    a:focus{
+      color:white !important;
+    }
+  }
+}
+

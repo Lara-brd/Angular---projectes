@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color:black;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+}
+
+.border-y{
+  border-top:1px solid rgb(56, 56, 56);
+  border-bottom:1px solid rgb(56, 56, 56);
+}
+
+.border-x{
+  border-right:1px solid rgb(56, 56, 56);
+  border-left:1px solid rgb(56, 56, 56);
+}
+
+.bg-gray {
+  background-color: rgb(24, 24, 26);
+}
+
+.text-sm {
+  font-size:0.8rem;
+}
