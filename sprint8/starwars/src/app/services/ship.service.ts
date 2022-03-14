@@ -1,42 +1,50 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Ship } from '../interfaces/ship';
 import { Observable, Subject } from 'rxjs';
-
+import { Ship } from '../interfaces/ship';
 @Injectable({
   providedIn: 'root'
 })
 export class ShipService {
   api:string;
-  private ships:Ship [];
-  private ships$:Subject<Ship[]>;
+  listShips:any[];
+  private ships$ = new Subject<any>();
+
+
+
+
 
   constructor( private http:HttpClient) { 
     this.api = 'https://swapi.dev/api/';
-    this.ships = [];
-    this.ships$ = new Subject();
+    this.listShips = [];
   }
 
-  //petición datos API
-  getAllShips(){
+  //petición datos API nave
+  getAllShips():Observable<any>{
     const PATH = this.api +'starships';
-    return this.http.get<any>(PATH);
+    return this.http.get<Ship[]>(PATH);
   }
 
-  //add objetos y aviso a los subcriptores de los cambios
-  addShip(ship:Ship){
-    this.ships.push(ship);
-    this.ships$.next(this.ships);
-  }
 
-  //subject private tengo que crear metodo para subscribirme
-  getShips$():Observable<Ship[]>{
+  
+
+
+  //observable primero avisamos del cambio y mandamos array luego método get para poder subscribirnos
+  refreshShips(arr:any){
+    this.listShips = arr;
+    this.ships$.next(this.listShips);
+  }
+  getShips$():Observable<any>{
     return this.ships$.asObservable();
   }
 
-  printShip(){
-    console.log(this.ships);
+  getIdFromUrl(url:any){
+    let regex = /(\d+)/g;
+    return + url.substring(url.length -4).match(regex);
   }
+
+
+
 
 
 }

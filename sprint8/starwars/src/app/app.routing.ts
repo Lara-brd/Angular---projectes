@@ -3,14 +3,15 @@ import { Routes, RouterModule} from "@angular/router";
 
 //components
 import { HomeComponent } from "./components/home/home.component";
+import { ShipInfoComponent } from "./components/ship-info/ship-info.component";
 import { StarshipsComponent } from "./components/starships/starships.component";
-import { ShipFileComponent } from "./components/ship-file/ship-file.component";
+
 
 const appRoutes:Routes = [
   {path: '', component:HomeComponent},
   {path: 'home', component:HomeComponent},
+  {path: 'starships/:id', component: ShipInfoComponent},
   {path: 'starships', component:StarshipsComponent},
-  {path: 'shipFile', component:ShipFileComponent},
   {path: '**', component:HomeComponent},
 ]
 

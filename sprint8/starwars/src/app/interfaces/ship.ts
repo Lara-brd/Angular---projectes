@@ -1,10 +1,22 @@
 export interface Ship {
-  name:string;
-  model:string;
-  cost_in_credits:number;
-  atmosphering_speed:number;
-  manufacturer:string;
-  length:number;
-  crew:string;
-  url:string;
+  id?:string,
+  MGLT:number,
+  cargo_capacity:number,
+  consumables:string,
+  cost_in_credits:number,
+  created:string,
+  crew:string,
+  edited:string,
+  films:any[],
+  hyperdrive_rating:string,
+  length:number,
+  manufacturer:string,
+  max_atmosphering_speed:number,
+  model: string,
+  number:string,
+  passengers:number,
+  pilots:any[],
+  tarship_class:string,
+  url:string,
+
 }

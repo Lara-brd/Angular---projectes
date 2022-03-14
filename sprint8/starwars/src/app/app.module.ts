@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { StarshipsComponent } from './components/starships/starships.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ShipFileComponent } from './components/ship-file/ship-file.component';
+import { ShipInfoComponent } from './components/ship-info/ship-info.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { ShipFileComponent } from './components/ship-file/ship-file.component';
     HomeComponent,
     StarshipsComponent,
     NavbarComponent,
-    ShipFileComponent
+    ShipInfoComponent,
   ],
   imports: [
     BrowserModule,

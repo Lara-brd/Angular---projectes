@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShipFileComponent } from './ship-file.component';
+import { ShipInfoComponent } from './ship-info.component';
 
-describe('ShipFileComponent', () => {
-  let component: ShipFileComponent;
-  let fixture: ComponentFixture<ShipFileComponent>;
+describe('ShipInfoComponent', () => {
+  let component: ShipInfoComponent;
+  let fixture: ComponentFixture<ShipInfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShipFileComponent ]
+      declarations: [ ShipInfoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShipFileComponent);
+    fixture = TestBed.createComponent(ShipInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
