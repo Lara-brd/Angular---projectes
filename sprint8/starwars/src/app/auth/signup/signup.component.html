@@ -1,0 +1,57 @@
+
+<ng-template #contenido let-modal>
+  <div class="row">
+
+    <div class="col d-flex justify-content-center flex-column">
+
+      <a class="close align-self-end pe-4" arial-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden ="true">&times;</span>
+      </a>
+
+        <img class="align-self-center" width="150px" src="../../../assets/img/pngegg-am.png" alt="starwars logo">
+
+        <p class="title-account text-center py-4">CREATE YOUR ACCOUNT</p>
+
+        <form class="form-signup" (ngSubmit)="addSign()">
+          <div class="form-row p-3">
+              <input id="first-name" 
+              name="nombre"
+              type="text"  
+              class="form-control p-2" 
+              [(ngModel)] = "signup.name"
+              placeholder="First name">
+          </div>
+          <div class="form-row p-3">
+              <input type="text" 
+              name="surname"
+              class="form-control p-2" 
+              [(ngModel)] = "signup.surname"
+              placeholder="Last name">
+          </div>
+          <div class="form-row p-3">
+              <input type="password" 
+              name="password"
+              class="form-control p-2" 
+              [(ngModel)] = "signup. password"
+              placeholder="Password">
+          </div>
+          <div class="row p-3">
+            <button type="submit" class="btn mybtn p-2">Agregar</button>
+          </div>
+        </form>
+    </div>
+  </div>
+  <div>
+    <p class="text-policy p-3">
+      When you create this account, you agree to our Terms of Use and acknowledge that you have read our Privacy Policy, Cookies Policy and EU Privacy Rights. 
+    </p>
+  </div>
+</ng-template>
+
+
+
+<!------------BUTTON   -------------------------->
+
+<a 
+class="nav-link text-secondary m-0 p-0" (click)="openMD(contenido)">SIGN UP
+</a>

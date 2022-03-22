@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ShipsTemplate } from 'src/app/interfaces/ship';
 import { ShipService } from 'src/app/services/ship.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { ShipService } from 'src/app/services/ship.service';
   styleUrls: ['./ship-info.component.scss']
 })
 export class ShipInfoComponent implements OnInit {
+  page:number;
   urlId:number = 0;
   ships:any[]=[];
   shipInfo = {
@@ -24,7 +26,9 @@ export class ShipInfoComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     private _shipService:ShipService
-  ) {}
+  ) {
+    this.page = this._shipService.page;
+  }
   
 
   ngOnInit(): void {
@@ -32,32 +36,26 @@ export class ShipInfoComponent implements OnInit {
     this.route.paramMap.subscribe(params=>{
       this.urlId= +params.get('id')!;
     });
-    console.log(this.urlId);
-    this._shipService.getAllShips().subscribe(ship=>{
-      console.log(ship.results)
+    this._shipService.getAllShips(this.page).subscribe(ship=>{
       this.searchShip(ship);
       this.searchImage();
-
-
     });
   }
 
 
   //search ship by selected id
-  searchShip(ship:any){
-    for(let i =0; i< ship.results.length; i++){
+  searchShip(ship:ShipsTemplate){
 
-      if(ship.results[i].url == 'https://swapi.dev/api/starships/'+this.urlId +'/'){
-        this.shipInfo.name = ship.results[i].name;
-        this.shipInfo.model = ship.results[i].model;
-        this.shipInfo.cost_in_credits = ship.results[i].cost_in_credits;
-        this.shipInfo.max_atmosphering_speed = ship.results[i].max_atmosphering_speed;
-        this.shipInfo.manufacturer = ship.results[i].manufacturer;
-        this.shipInfo.length = ship.results[i].length;
-        this.shipInfo.crew = ship.results[i].crew;
-
-      }
-    } 
+    ship.results.forEach((ship)=>{
+      ship.url == 'https://swapi.dev/api/starships/'+this.urlId +'/';
+      this.shipInfo.name = ship.name;
+      this.shipInfo.model = ship.model;
+      this.shipInfo.cost_in_credits = ship.cost_in_credits;
+      this.shipInfo.max_atmosphering_speed = ship.max_atmosphering_speed;
+      this.shipInfo.manufacturer = ship.manufacturer;
+      this.shipInfo.length = ship.length;
+      this.shipInfo.crew = ship.crew;
+    })
   }
 
 
@@ -65,8 +63,5 @@ export class ShipInfoComponent implements OnInit {
   searchImage(){
     this.shipInfo.image = 'https://starwars-visualguide.com/assets/img/starships/'+this.urlId+'.jpg';
   }
-
-
-
 
 }
