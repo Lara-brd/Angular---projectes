@@ -1,22 +1,28 @@
-export interface Ship {
-  id?:string,
-  MGLT:number,
-  cargo_capacity:number,
-  consumables:string,
-  cost_in_credits:number,
-  created:string,
-  crew:string,
-  edited:string,
-  films:any[],
-  hyperdrive_rating:string,
-  length:number,
-  manufacturer:string,
-  max_atmosphering_speed:number,
-  model: string,
-  number:string,
-  passengers:number,
-  pilots:any[],
-  tarship_class:string,
-  url:string,
-
+export interface ShipsTemplate {
+  count:    number;
+  next:     string;
+  previous: null;
+  results:  Result[];
 }
+
+export interface Result {
+  name:                   string;
+  model:                  string;
+  manufacturer:           string;
+  cost_in_credits:        string;
+  length:                 string;
+  max_atmosphering_speed: string;
+  crew:                   string;
+  passengers:             string;
+  cargo_capacity:         string;
+  consumables:            string;
+  hyperdrive_rating:      string;
+  MGLT:                   string;
+  starship_class:         string;
+  pilots:                 string[];
+  films:                  string[];
+  created:                Date;
+  edited:                 Date;
+  url:                    string;
+}
+

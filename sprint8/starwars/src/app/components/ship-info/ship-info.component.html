@@ -1,6 +1,15 @@
 <div class="container">
   <div class="row d-flex justify-content-center p-3">
-    <img class="p-0" src = "{{shipInfo.image}}" alt="">
+
+    <!-- image -->
+
+    <img 
+    src="{{shipInfo.image}}" 
+    class="p-0"
+    alt="Starship image"
+    onerror="this.src='https://starwars-visualguide.com/assets/img/big-placeholder.jpg'"
+    >
+
   </div>
   <div class="row">
     <div class="col-12 py-3">

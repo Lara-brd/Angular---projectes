@@ -6,18 +6,17 @@
         <!-- [routerLink] = "['/shipdetails']" -->
         <div class="list-group-item m-2 p-3 rounded bg-gray text-secondary" *ngFor="let ship of ships">
         <a (click) = "getId(ship.url)">
-              <div [id] ='ship.url.substring(ship.url.length-3)'>
-                
+              <div>
                 <h5>{{ship.name}}</h5>
                 <p>{{ship.model}}</p>
               </div>
             </a>
-            
-                      
-          
-          
           </div>
 
+      </div>
+
+      <div *ngIf ="charged"  class="d-flex justify-content-end p-2">
+        <button type ="button" class="btn btn-next" (click) ="next()">View more <fa-icon [icon]="angleRight"></fa-icon></button>
       </div>
     </div>
 

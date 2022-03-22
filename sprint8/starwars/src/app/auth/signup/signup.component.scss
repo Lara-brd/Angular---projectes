@@ -1,0 +1,57 @@
+.modal-content{
+  background-color: #181818;
+  margin-top : 20vh;
+
+}
+
+.title-account{
+  color: #f6cb34;
+  font-size: 1.3rem;
+}
+
+//TODO cambiar color placeholder
+.form-control:focus {
+  border-color: #f6cb34;
+  box-shadow: none;
+  background-color: rgb(85, 85, 85);
+}
+.form-control:focus::placeholder{
+  font-size:.8rem;
+  color:white;
+}
+
+.form-control{
+  font-size:.8rem;
+}
+
+.mybtn {
+  background-color: white;
+  margin:10px;
+  width: 95%;
+  margin: 0 auto;
+  background-color:  rgb(85, 85, 85);
+  color:white;
+}
+
+.text-policy{
+  color:rgb(85, 85, 85);
+  font-size: .8rem;
+}
+
+a {
+  cursor:pointer;
+}
+
+.close {
+  text-decoration:none;
+  color:black;
+  font-size: 2.5rem;
+  padding:5px;
+}
+
+
+
+
+
+
+
